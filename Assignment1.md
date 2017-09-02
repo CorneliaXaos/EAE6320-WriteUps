@@ -59,6 +59,6 @@ I do, however, have some insight into future assignments.  Namely involving the 
 
 All in all.. I'm not entirely sure what to expect from this class.  All I know for sure is that I will find out as the time passes and I complete assignments.  Anyways, here's a download link for the executable:
 
-[LINK: Windows - Release - Direct3D]
+[Windows - Release - Direct3D](https://github.com/CorneliaXaos/EAE6320-WriteUps/releases/download/a1/Assignment1.zip)
 
 ~ Cornelia Schultz
