@@ -1,13 +1,13 @@
 # Assignment 1
-## Welcome to your new codebase; it'll be home for the next four months!
+### Welcome to your new codebase; it'll be home for the next four months!
 
 Assignment 1 was a simple assignment.. that somehow ended up (probably and hopefully) taking far more time than any future assignment will due to being largely administrative in nature.  To put it simply, I had to set up the Visual Studio Solution for the project, set up the Git Repository, and make some minor changes to some of the example shaders provided.  All in all, it was a lot of configuring with very little programmatic objective.
 
-# Purpose
+## Purpose
 
 Still, it had its purpose.  One can't be expected to use a new codebase effectively and efficiently without doing some kind of research into it..  And the administrative tasks of setting up the solution introduced me to the various subsystems in the project.  Many of them are obvious about what they do (things like Concurrency and Graphics).  Others are a bit more elusive in their direct purpose and will require some more examining to fully understand.
 
-# Setting Up
+## Setting Up
 
 Speaking of the Graphics project, a part of the assignment was the create this project from scratch.  Well.. not the code, that was provided.  But the Visual Studio project had to be created and configured.  This involved setting up the various configuration files for the project and adding references to other projects where they were needed.  It was like a scavenger hunt for broken dependencies.  Which projects needed to link to the Graphics project and which projects did the Graphics project need references to as well?
 
@@ -15,11 +15,17 @@ In the end, I settled on a simple approach:  scan through every file quickly and
 
 I should note, as part of the assignment requirements, that because of this I didn't find any projects that included files from the Graphics project but didn't need a reference to the Graphics static library.  It is possible such projects would exist.. but I feel it is better to include the reference to the project anyways.
 
-My reasoning is as follows:  if Project A depends on Project B, and Project B depends on Project C, Project A transitively depends on Project C.  (Basic Algebra: `A->B->C` therefore `A->C` .)  This hypothetical Project A shouldn't need to add Project C to its references _in visual studio_ because of how Visual Studio handles references to static libraries.  (They are only linked in the end by the project producing an executable.  Static libraries aren't "linked" together in a single library if one depends on the other, but an executable project is capable of determining by "reference chains" which libraries to link against by iterating down the dependency tree.)
+My reasoning is as follows:  if Project A depends on Project B, and Project B depends on Project C, Project A transitively depends on Project C.  (Basic Algebra: `A->B->C` therefore `A->C` .)  This hypothetical Project A shouldn't need to add Project C to its references *in visual studio* because of how Visual Studio handles references to static libraries.  (They are only linked in the end by the project producing an executable.  Static libraries aren't "linked" together in a single library if one depends on the other, but an executable project is capable of determining by "reference chains" which libraries to link against by iterating down the dependency tree.)
 
 Now, suppose we refactor Project A so that it no longer depends on Project B.  For whatever reason, we managed to get rid of that dependency.  How does A know it needs to depend on C?  It won't unless we remember to add a reference to it in the future.  Thus, I feel it is best to add as reference any project which is directly depended on, even if another dependency would bring along the appropriate static library.  This isn't to say that just because Project A uses Project B it should include as references all of Project B's references.  It should only include Project C if it would directly use Project C itself.
 
-# VM Troubles
+### Update!
+
+After having some more discussion about project dependencies and doing a little more looking into the ones set up in my Solution, I discovered a Project that doesn't need a reference to the Graphics project even though it has included files from that project.  The ShaderBuilder project uses include files from the Graphics project, but these include files are only used to bring in types; it never actually accesses code from the Graphics project in any way, and doesn't need to reference the Graphics Project.
+
+Additionally, I forgot to list the projects that use the Graphics Project, and it was a singular project: the Application Project. 
+
+## VM Troubles
 
 Now, I feel it is necessary to note that I don't use Windows or Visual Studio personally.  In fact, I normally do my development, when possible, on a Linux machine.  I find it easier to get into a workflow I like and have access to a shell environment I find more palatable.  But this assignment called for Visual Studio so I thought I'd try and complete it as I had similar academic projects in the past: via Virtual Machine.
 
@@ -29,7 +35,7 @@ So I downloaded Windows 10 Education edition from the University and gave it a s
 
 ... and the code base requires Feature Level 11_0 or higher.  And, thus, it was discovered I wouldn't be using a VM to get any productive work done..  and I had to go find a Computer Lab the next day.  Luckily, there are many available on campus.
 
-# SHADERS!
+## SHADERS!
 
 This was absolutely the most enjoyable part of the project.  Once I was working on a machine with proper graphics card capabilities I was able to fiddle around and make something neat happen.  I should note, I have prior graphics programming experience, having taken another class at the University of Utah on the subject.  In said class I used OpenGL to complete all the assignments.  As such I could, with some small work, render 3D objects in this codebase without much lecture on the subject from the professor.  (I could even write lighting shaders, shadow shaders, and more!)  Additionally, I've made several shaders for Unity, and, thus, am also somewhat familiar with HLSL.
 
@@ -45,11 +51,11 @@ But we had more to do!  In addition to "animating the vertices positions" someho
 
 Then it was just a matter of tweaking the simulation time value I passed to that function so that I could use it to animate through all possible values for the hue...  and the result?  This amazing piece of work!
 
-![Assignment 1 Gif](/images/assignment1.gif)
+![Assignment 1 Gif](/images/a01/assignment1.gif)
 
 Ah, yes.  This was totally worth it.  (It looks much better if you run the application yourself.  I recommend you check out the link below!)  And with that the assignment was complete.
 
-# Expectations
+## Expectations
 
 I'm uncertain as to what I expect to get from this class.  I'm already familiar with several of the core topics we were introduced to in this first week.  I'm familiar with graphics programming, albeit not in a Windows environment.  I have a side project on hold where I plan to build a cross platform renderer like the one we have in this codebase.
 
