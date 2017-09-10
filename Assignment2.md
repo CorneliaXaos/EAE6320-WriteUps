@@ -21,7 +21,7 @@ The `Sprite` class's interface is as simple as the `Effect` class and consists o
 
 All in all, what was once tens of lines in each platform specific implementation class was reduced to the following, ridiculously simple, calls to render the quad to the screen:
 
-```c++
+``` c++
 s_effect.Bind();
 s_sprite.Render();
 ```
