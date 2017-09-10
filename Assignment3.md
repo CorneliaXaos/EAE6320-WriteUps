@@ -15,7 +15,7 @@ Finally, the last objective of merging the shaders together was a simple one tha
 
 All in all, I created the following additional files:
 
-* `cScreen.h` | `cScreen.cpp` | `cScreen.gl.cpp` | `cScreen.d3d.cpp`
+* `cScreen.h`, `cScreen.cpp`, `cScreen.gl.cpp`, & `cScreen.d3d.cpp`
 * `sInitParams.h`
 * `sColor.h`
 
