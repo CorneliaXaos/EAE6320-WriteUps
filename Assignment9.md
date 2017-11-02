@@ -88,5 +88,7 @@ You can use the following controls to:
   * The **Up** and **Down** arrow keys will translate along the World Space y-axis.
   * The **Left** and **Right** arrow keys will translate along the World Space x-axis.
   * The **Page Up** and **Page Down** keys will translate along the World Space z-axis.
+* Reset the Camera
+  * Press **R**!
   
 Enjoy!
