@@ -62,6 +62,16 @@ The transformation from Clip Space to Screen Space is handled internally by the 
 
 (End: Wall of Text. :P )
 
+### To The Shader!
+
+So, how does all that get accomplished in the Vertex Shader?  Well.. we know that the vertices passed into vertex shader are in Model Space and the vertex passed out needs to be in Clip Space.. so.. we obviously need to perform 3 transformations to convert the Model Space vertex from Model Space, to World Space, then View Space, and finally Clip Space.  There are a few ways to do this, but one way is to pass in to the shader the three required transformations.  And how does that look in my code?  Well..  I have a helper function so it's as simple as:
+
+``` glsl
+o_position = MODEL_TO_CLIP(vec4(i_position, 1));
+```
+
+That wonderful little function macro `MODEL_TO_CLIP` unwraps behind the scenes into the appropriate, platform specific multiplication code to transform `i_position` into Clip Space.
+
 ## Wrapping Up
 
 And that sums it all up.  As usual, a build can be found below along with a wonderful gif of just what is possible in the Engine at this point in time.
