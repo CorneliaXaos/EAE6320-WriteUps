@@ -1,11 +1,11 @@
 # Assignment 9
 ### 3D EZ
 
-The purpose of this assignment was to add "real" 3D support to our game engine.  The previous assignment laid the foundation, but the meshes we could create before were restricted to a two-dimensional space.. this assignment changed all that!
+In this assignment, we had to add "real" 3D support to our game engine.  The previous assignment laid the foundation, but the meshes we could create before were restricted to a two-dimensional space.. this assignment changed all that!
 
 A lot of little things had to be tweaked, some of which included the following:
 
-* Adding a Physics Project (for basic Rigid Body support.)
+* Adding a Physics Project (for basic Rigid Body support).
 * Implementing a Camera and how to submit one to Graphics.
 * Upgrading the Mesh classes to include a third dimension.
 * Adding a depth buffer/depth stencil to the mesh classes.
