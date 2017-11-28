@@ -1,4 +1,4 @@
-# Assignmetn 12
+# Assignment 12
 ### I had a head start.
 
 In this assignment we had to change the Graphics project and MeshBuilder projects so that meshes were built as Binary Files and the Graphics project loaded Binary encoded mesh data...  wait..  I did that already!  Still, I had a few things that needed to be cleaned up and made better.

@@ -15,3 +15,4 @@ This little site is just a container for my writeups and release binaries for th
 * [Assignment 10](/EAE6320-WriteUps/Assignment10)
 * [Assignment 11](/EAE6320-WriteUps/Assignment11)
 * [Assignment 12](/EAE6320-WriteUps/Assignment12)
+* [Assignment 13](/EAE6320-WriteUps/Assignment13)
